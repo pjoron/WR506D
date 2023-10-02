@@ -1,6 +1,6 @@
 <?php 
 
-namespace App\Service\slugify;
+namespace App\Service;
 
 use Symfony\Component\String\Slugger\AsciiSlugger;
 
