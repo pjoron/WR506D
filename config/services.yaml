@@ -6,12 +6,15 @@
 parameters:
 
 services:
+    App\EventSubscriber\EntitySavedEventSubscriber: ~
+        
     app.my_service:
         class: App\Service\slugify
     # default configuration for services in *this* file
     _defaults:
         autowire: true      # Automatically injects dependencies in your services.
         autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
+    
 
         
 
@@ -27,5 +30,8 @@ services:
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
 
-
+# api/config/services.yaml
+    App\State\UserPasswordHasher:
+        bind:
+            $processor: '@api_platform.doctrine.orm.state.persist_processor'
 
