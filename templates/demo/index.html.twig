@@ -13,6 +13,7 @@
 
 
 
-    <h1>Salut voici l'heure : {{ "now"|date("l j F Y à H:i:s") }}</h1>
+    <h1>Salut voici l'heure : {{ "now"|format_datetime('full', 'short', locale='fr', timezone='Europe/Paris') }}
+</h1>
     {{slug}}
 {% endblock %}
